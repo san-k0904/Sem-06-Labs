@@ -30,14 +30,10 @@ void printExpected(int state){
     int first=1;
     for(int j=0;j<6;j++){//traverse throught the ACTION part
         if(ParseTable[state][j][0]=='s'||ParseTable[state][j][0]=='r'||strcmp(ParseTable[state][j][0],"accept")==0){
-            if(strcmp(ParseTable[state][j][0],"accept")==0){
-                printf('$\n');
-                return;
-            }
             if(!first){//means one symbol is already printed
                 printf(" or ");
             }
-            printf("%s",ParseTable[state][j]);//the state which has s or r or accept that terminal value should be there
+            printf("%s",terminals[j]);//the state which has s or r or accept that terminal value should be there
             first=0;
         }
     }
